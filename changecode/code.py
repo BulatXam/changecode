@@ -2,8 +2,6 @@
 
 from typing import List
 
-from .imports import ImportParse
-
 
 class CodeParse:
     def __init__(self, file):
@@ -16,9 +14,6 @@ class CodeParse:
 
     def _search(self, text) -> List:
         return [(num, string) for num, string in enumerate(self.code_strings) if text in string]
-    
-    def _get_imports(self, code_strings):
-        pass
 
     def add_import_from(self, from_, import_) -> None:
         import_code = f"from {from_} import {import_}"
